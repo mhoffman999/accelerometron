@@ -18,7 +18,8 @@ class ParallaxCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        //Setup parallax code here
+        //Call parallax code here
+        setUpParallax()
         
     }
     
@@ -31,6 +32,28 @@ class ParallaxCell: UITableViewCell {
     
     func setUpParallax() {
         //Setup amount of screen scroll, types of motion and values
+        
+        //Tracks amount of slide or movement of parallax effect along the x- and y-axis
+        let min = CGFloat(-60)
+        let max = CGFloat(60)
+        
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.x", type: .tiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = min
+        xMotion.maximumRelativeValue = max
+        
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.y", type: .tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = min
+        yMotion.maximumRelativeValue = max
+        
+        //Adding the above motion effects to the imageView
+        //Create a Motion Effect Group (like a folder to drop both effects into)
+        let motionEffectGroup = UIMotionEffectGroup()
+        motionEffectGroup.motionEffects = [xMotion, yMotion]
+        
+        //Modify the UIImageView with the motionEffectGroup
+        //Then call it in the awakeFromNib func up top
+        itemImageView.addMotionEffect(motionEffectGroup)
+        
     }
     
     
