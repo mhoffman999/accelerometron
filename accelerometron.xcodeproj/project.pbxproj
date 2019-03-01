@@ -12,6 +12,8 @@
 		D2C0C26C22274CEC00A4E6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C0C26A22274CEC00A4E6A9 /* Main.storyboard */; };
 		D2C0C26E22274CEE00A4E6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C0C26D22274CEE00A4E6A9 /* Assets.xcassets */; };
 		D2C0C27122274CEE00A4E6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C0C26F22274CEE00A4E6A9 /* LaunchScreen.storyboard */; };
+		D2C0C27B222766A500A4E6A9 /* ParallaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0C27A222766A500A4E6A9 /* ParallaxCell.swift */; };
+		D2C0C2852228C78B00A4E6A9 /* Images+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0C2842228C78B00A4E6A9 /* Images+Names.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D2C0C26D22274CEE00A4E6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2C0C27022274CEE00A4E6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2C0C27222274CEE00A4E6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2C0C27A222766A500A4E6A9 /* ParallaxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxCell.swift; sourceTree = "<group>"; };
+		D2C0C2842228C78B00A4E6A9 /* Images+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Images+Names.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		D2C0C26522274CEC00A4E6A9 /* accelerometron */ = {
 			isa = PBXGroup;
 			children = (
+				D2C0C28122287D6D00A4E6A9 /* Service */,
+				D2C0C27C22276A6500A4E6A9 /* Model */,
+				D2C0C2792227666700A4E6A9 /* View */,
+				D2C0C2782227665700A4E6A9 /* Controller */,
 				D2C0C26622274CEC00A4E6A9 /* AppDelegate.swift */,
-				D2C0C26822274CEC00A4E6A9 /* ListTableViewController.swift */,
 				D2C0C26A22274CEC00A4E6A9 /* Main.storyboard */,
 				D2C0C26D22274CEE00A4E6A9 /* Assets.xcassets */,
 				D2C0C26F22274CEE00A4E6A9 /* LaunchScreen.storyboard */,
 				D2C0C27222274CEE00A4E6A9 /* Info.plist */,
 			);
 			path = accelerometron;
+			sourceTree = "<group>";
+		};
+		D2C0C2782227665700A4E6A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D2C0C26822274CEC00A4E6A9 /* ListTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D2C0C2792227666700A4E6A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2C0C27A222766A500A4E6A9 /* ParallaxCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2C0C27C22276A6500A4E6A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2C0C2842228C78B00A4E6A9 /* Images+Names.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2C0C28122287D6D00A4E6A9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C0C27B222766A500A4E6A9 /* ParallaxCell.swift in Sources */,
 				D2C0C26922274CEC00A4E6A9 /* ListTableViewController.swift in Sources */,
+				D2C0C2852228C78B00A4E6A9 /* Images+Names.swift in Sources */,
 				D2C0C26722274CEC00A4E6A9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
