@@ -7,20 +7,30 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ParallaxCell: UITableViewCell {
 
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var motionManager: CMMotionManager!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        //Call parallax code here
+        //.... Call parallax code here ....
+        
         setUpParallax()
         
+/*
+        //Parallax motion using accelerometer data
+        //Uncomment to use this, BUT comment out "setUpParallax call above
+        motionManager = CMMotionManager()
+        motionManager.startAccelerometerUpdates(to: .main, withHandler: updateImageView)
+*/
+ 
     }
     
     //Will be used in ListTVC to populate the tableview row with and image and description
@@ -53,6 +63,14 @@ class ParallaxCell: UITableViewCell {
         //Modify the UIImageView with the motionEffectGroup
         //Then call it in the awakeFromNib func up top
         itemImageView.addMotionEffect(motionEffectGroup)
+        
+    }
+    
+    //For creating parallax motion using accelerometer data
+    func updateImageView(data: CMAccelerometerData?, error: Error?) {
+        guard let accelerometerData = data else {return}
+        
+        itemImageView.frame = CGRect(x: CGFloat(accelerometerData.acceleration.x) * 100, y: CGFloat(accelerometerData.acceleration.y) * 100, width: self.frame.size.width, height: self.frame.size.height)
         
     }
     
